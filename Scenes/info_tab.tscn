@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnw7mykanwos7"]
+
+[ext_resource type="Script" path="res://Scripts/info_tab.gd" id="1_do3fy"]
+[ext_resource type="Texture2D" uid="uid://ceahrbgx530je" path="res://Assets/sprites/Images/information.png" id="1_gs8yv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0k2v"]
+
+[node name="InfoTab" type="Area2D"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(1, 0)
+collision_mask = 2
+script = ExtResource("1_do3fy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.500015, -1.14441e-05)
+scale = Vector2(0.0292969, 0.03125)
+texture = ExtResource("1_gs8yv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+shape = SubResource("RectangleShape2D_f0k2v")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
