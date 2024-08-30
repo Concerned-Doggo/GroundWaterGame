@@ -1,100 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://d1anw2ops1msp"]
+[gd_scene load_steps=8 format=3 uid="uid://d1anw2ops1msp"]
 
-[ext_resource type="Texture2D" uid="uid://haglhc5vgj08" path="res://Assets/sprites/coin.png" id="1_rycxg"]
 [ext_resource type="Script" path="res://Scripts/coin.gd" id="2_bru2p"]
+[ext_resource type="Texture2D" uid="uid://ddynracap7bhv" path="res://Assets/sprites/Images/water-drop.png" id="3_suyp1"]
 [ext_resource type="AudioStream" uid="uid://cpikbmkexe8hw" path="res://Assets/sounds/coin.wav" id="3_t2u6o"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6tm3l"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tc0wb"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yvlge"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jv75n"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iwhcr"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p2hui"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aevsu"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qfpu4"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(112, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wctwu"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(128, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u1a6p"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(144, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5q17c"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(160, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5llsp"]
-atlas = ExtResource("1_rycxg")
-region = Rect2(176, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_lbq5f"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6tm3l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tc0wb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yvlge")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jv75n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iwhcr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p2hui")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aevsu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qfpu4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wctwu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u1a6p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5q17c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5llsp")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b5wxe"]
 radius = 4.0
@@ -104,34 +12,22 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:visible")
+tracks/0/path = NodePath("../CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/path = NodePath(".:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -143,19 +39,19 @@ resource_name = "pickup"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:visible")
+tracks/0/path = NodePath("../CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/path = NodePath(".:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -164,25 +60,13 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/2/type = "value"
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:playing")
+tracks/2/path = NodePath("..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("..")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -201,16 +85,15 @@ _data = {
 collision_mask = 2
 script = ExtResource("2_bru2p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_lbq5f")
-autoplay = "default"
-frame_progress = 0.85458
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_b5wxe")
 
 [node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_t2u6o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0207523, 0.0179943)
+texture = ExtResource("3_suyp1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../PickUpSound")
