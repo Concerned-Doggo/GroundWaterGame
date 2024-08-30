@@ -40,60 +40,63 @@ var plank_texts = [
 ]
 
 func _ready() -> void:
-	type(dialog_texts[current_dialog]["question"],1)
+	type(dialog_texts[current_dialog]["question"], true)
 
-func type(text, isquestion):
+func type(text: String, is_question: bool) -> void:
 	options_container.hide()  # Hide options at the start
 	label.visible_ratio = 0
 	label.text = text
 	label.add_theme_font_size_override("font_size", 24)
 	var tween = create_tween()
 	tween.tween_property(label, "visible_ratio", 1, 1)
-	if isquestion:
-		tween.tween_callback(show_options)
+	if is_question:
+		tween.tween_callback(Callable(self, "show_options"))
 		
-func show_options():
+func show_options() -> void:
 	options_container.show()  # Make sure the options are shown
 	option1_button.text = dialog_texts[current_dialog]["options"][0]
 	option2_button.text = dialog_texts[current_dialog]["options"][1]
 	option3_button.text = dialog_texts[current_dialog]["options"][2]
 
-
-func check_answer(selected_option):
-	print(selected_option)
+func check_answer(selected_option: int) -> void:
 	if selected_option == dialog_texts[current_dialog]["answer"]:
-		type("Correct! " + dialog_texts[current_dialog]["options"][selected_option] + " is the right answer.", 0)
+		type("Correct! " + dialog_texts[current_dialog]["options"][selected_option] + " is the right answer.", false)
 	else:
-		type("Incorrect! The correct answer is " + dialog_texts[current_dialog]["options"][dialog_texts[current_dialog]["answer"]], 0)
+		type("Incorrect! The correct answer is " + dialog_texts[current_dialog]["options"][dialog_texts[current_dialog]["answer"]], false)
 	
 	options_container.hide()
 	current_dialog += 1
 	
 	if current_dialog < dialog_texts.size():
 		await get_tree().create_timer(2).timeout
-		type(dialog_texts[current_dialog]["question"], 1)
+		type(dialog_texts[current_dialog]["question"], true)
 	else:
 		await get_tree().create_timer(2).timeout
-		type("You've completed the quiz!", 0)
+		type("You've completed the quiz!", false)
+		await get_tree().create_timer(2).timeout
+		show_plank_info()
 
 # Plank Card Interaction Function
-func show_plank_info(plank_index):
+func show_plank_info() -> void:
+	# Display a random plank text after the quiz is completed
+	var plank_index = randi() % plank_texts.size()
 	plank_label.visible = true
 	plank_label.text = plank_texts[plank_index]
-	await get_tree().create_timer(3).timeout
-	plank_label.visible = false
 
-# Example usage of plank card interaction:
-# show_plank_info(0)  # Call this when player interacts with the first plank card
+	# Connect the plank_label to a mouse click event to hide it
+	plank_label.connect("gui_input", Callable(self, "_on_plank_label_clicked"))
 
+func _on_plank_label_clicked(event: InputEvent) -> void:
+	# Check if the event is a left mouse button click
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		plank_label.visible = false
+		plank_label.disconnect("gui_input", Callable(self, "_on_plank_label_clicked"))
 
 func _on_option_1_pressed() -> void:
 	check_answer(0)
 
-
 func _on_option_2_pressed() -> void:
 	check_answer(1)
-
 
 func _on_option_3_pressed() -> void:
 	check_answer(2)

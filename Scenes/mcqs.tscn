@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://7j7n0ku4wc6v"]
+[gd_scene load_steps=3 format=3 uid="uid://7j7n0ku4wc6v"]
 
 [ext_resource type="Script" path="res://Scripts/mcqs.gd" id="1_qhnxa"]
+[ext_resource type="FontFile" uid="uid://q2ihkb7nc1kg" path="res://Assets/fonts/PixelOperator8.ttf" id="2_741uw"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_qhnxa")
@@ -10,6 +11,7 @@ offset_left = 52.0
 offset_top = 1.0
 offset_right = 997.0
 offset_bottom = 159.0
+theme_override_fonts/font = ExtResource("2_741uw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -21,18 +23,26 @@ offset_bottom = 350.0
 
 [node name="Option1" type="Button" parent="Options"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_741uw")
 
 [node name="Option2" type="Button" parent="Options"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_741uw")
 
 [node name="Option3" type="Button" parent="Options"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_741uw")
 
 [node name="PlankLabel" type="Label" parent="."]
-offset_left = 21.0
-offset_top = 123.0
-offset_right = 61.0
-offset_bottom = 146.0
+offset_left = 77.0
+offset_top = 183.0
+offset_right = 965.0
+offset_bottom = 318.0
+theme_override_fonts/font = ExtResource("2_741uw")
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Options/Option1" to="." method="_on_option_1_pressed"]
 [connection signal="pressed" from="Options/Option2" to="." method="_on_option_2_pressed"]
