@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu36l5upqc70r"]
+[gd_scene load_steps=3 format=3 uid="uid://do6swn4omoh7j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x55tu"]
+[ext_resource type="Texture2D" uid="uid://bgo05dm7c7lnp" path="res://Assets/sprites/Images/ladder.png" id="1_pos2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_siit5"]
+size = Vector2(30, 124)
 
 [node name="Ladder" type="Area2D"]
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -4)
+scale = Vector2(0.0703125, 0.25)
+texture = ExtResource("1_pos2x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_x55tu")
+position = Vector2(-3, -4)
+shape = SubResource("RectangleShape2D_siit5")

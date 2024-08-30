@@ -16,11 +16,10 @@ func _on_body_entered(body):
 		# var infoLabel = Label.new()
 		$Label.add_theme_font_override("font", load("res://Assets/fonts/PixelOperator8.ttf")) 
 		$Label.add_theme_font_size_override("font_size", 8) 
-		$Label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_WORD
+		#$Label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_WORD
 		$Label.text = "Did you know? Groundwater provides about 30% of the world’s freshwater!"
 
 
 # func _on_body_exited(body:Node2D):
 # 	if body.is_in_group("player") :
 # 		print("gone")
-
