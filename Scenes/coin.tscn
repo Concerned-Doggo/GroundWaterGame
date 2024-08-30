@@ -67,7 +67,7 @@ tracks/2/path = NodePath("..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.133333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -90,6 +90,7 @@ shape = SubResource("CircleShape2D_b5wxe")
 
 [node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_t2u6o")
+volume_db = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.0207523, 0.0179943)
