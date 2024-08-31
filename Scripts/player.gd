@@ -5,6 +5,13 @@ extends CharacterBody2D
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
+@export_group("Enemy")
+@export var min_stomp_deg = 35
+@export var max_stomp_deg = 145
+
+@export var stomp_y_velocity = -150
+
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -54,3 +61,28 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area is Enemy:
+		handle_enemy_collision(area)
+
+func handle_enemy_collision(enemy: Enemy):
+	if enemy == null:
+		return
+	
+	var angle_of_collision = rad_to_deg(position.angle_to_point(enemy.position))
+	
+	if angle_of_collision > min_stomp_deg && max_stomp_deg > angle_of_collision:
+		enemy.die()
+		on_enemy_stomped()
+	else:
+		die()
+
+func on_enemy_stomped():
+	velocity.y = stomp_y_velocity
+
+
+func die():
+	print("die hero")
+	
