@@ -1,23 +1,23 @@
 [gd_scene load_steps=10 format=3 uid="uid://d5f5615pqp0u"]
 
-[ext_resource type="Script" path="res://Scripts/green_slime.gd" id="1_msldw"]
-[ext_resource type="Texture2D" uid="uid://c1b3myi8q3gvg" path="res://Assets/sprites/slime_purple.png" id="1_vakiv"]
-[ext_resource type="PackedScene" uid="uid://bw5rk1yk6m36d" path="res://Scenes/kill_zone.tscn" id="2_wpa4m"]
+[ext_resource type="Script" path="res://Scenes/Enemy/green-slime/green_slime.gd" id="1_ac4w8"]
+[ext_resource type="Texture2D" uid="uid://c1b3myi8q3gvg" path="res://Assets/sprites/slime_purple.png" id="2_8uxnj"]
+[ext_resource type="PackedScene" uid="uid://bw5rk1yk6m36d" path="res://Scenes/Killzone/kill_zone.tscn" id="3_uffvc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ypc1"]
-atlas = ExtResource("1_vakiv")
+atlas = ExtResource("2_8uxnj")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4yqhv"]
-atlas = ExtResource("1_vakiv")
+atlas = ExtResource("2_8uxnj")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jloyi"]
-atlas = ExtResource("1_vakiv")
+atlas = ExtResource("2_8uxnj")
 region = Rect2(48, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_om4nv"]
-atlas = ExtResource("1_vakiv")
+atlas = ExtResource("2_8uxnj")
 region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_57871"]
@@ -44,7 +44,7 @@ animations = [{
 size = Vector2(9, 11)
 
 [node name="PurpuleSlime" type="Node2D"]
-script = ExtResource("1_msldw")
+script = ExtResource("1_ac4w8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
@@ -52,7 +52,7 @@ sprite_frames = SubResource("SpriteFrames_57871")
 autoplay = "default"
 frame_progress = 0.727394
 
-[node name="KillZone" parent="." instance=ExtResource("2_wpa4m")]
+[node name="KillZone" parent="." instance=ExtResource("3_uffvc")]
 position = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]

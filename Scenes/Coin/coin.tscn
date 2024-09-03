@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://d1anw2ops1msp"]
 
-[ext_resource type="Script" path="res://Scripts/coin.gd" id="2_bru2p"]
+[ext_resource type="Script" path="res://Scenes/Coin/coin.gd" id="2_bru2p"]
 [ext_resource type="Texture2D" uid="uid://ddynracap7bhv" path="res://Assets/sprites/Images/water-drop.png" id="3_suyp1"]
 [ext_resource type="AudioStream" uid="uid://cpikbmkexe8hw" path="res://Assets/sounds/coin.wav" id="3_t2u6o"]
 
