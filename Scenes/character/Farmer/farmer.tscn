@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://cvk8s4q1qb2qe"]
+
+[ext_resource type="Script" path="res://Scenes/character/Farmer/farmer.gd" id="1_433kw"]
+[ext_resource type="Texture2D" uid="uid://dltsye4x4qeo7" path="res://Assets/sprites/Characters/farmer/morganLeFay_.png" id="1_t2l6k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q2xh"]
+atlas = ExtResource("1_t2l6k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0gdy"]
+atlas = ExtResource("1_t2l6k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73pax"]
+atlas = ExtResource("1_t2l6k")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mq28"]
+atlas = ExtResource("1_t2l6k")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6tcdb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q2xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0gdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73pax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mq28")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_khf4g"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_csw46"]
+radius = 19.0263
+
+[node name="Farmer" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_433kw")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6tcdb")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.539263
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_khf4g")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_csw46")
+
+[node name="RayCast" type="Node2D" parent="."]
+
+[node name="LeftRayCast" type="RayCast2D" parent="RayCast"]
+position = Vector2(2, 7)
+target_position = Vector2(-16, 0)
+
+[node name="RightRayCast" type="RayCast2D" parent="RayCast"]
+position = Vector2(-2, 7)
+target_position = Vector2(15, 0)

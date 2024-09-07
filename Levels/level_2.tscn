@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bm1ba2ccoapc7"]
 
 [ext_resource type="Texture2D" uid="uid://yn1fno51yw3n" path="res://Assets/sprites/world_tileset.png" id="1_yrqt3"]
-[ext_resource type="PackedScene" uid="uid://jaoj13ar0kyq" path="res://Scenes/Player/player.tscn" id="2_hfisu"]
+[ext_resource type="PackedScene" uid="uid://jaoj13ar0kyq" path="res://Scenes/character/Player/player.tscn" id="2_hfisu"]
 [ext_resource type="PackedScene" uid="uid://bw5rk1yk6m36d" path="res://Scenes/Killzone/kill_zone.tscn" id="3_4hrss"]
 [ext_resource type="PackedScene" uid="uid://fjf1a7q6qf7n" path="res://Scenes/Platforms/desert/desert_platform.tscn" id="4_o6q20"]
 [ext_resource type="PackedScene" uid="uid://dnw7mykanwos7" path="res://Scenes/InfoTab/info_tab.tscn" id="5_5cpp7"]
