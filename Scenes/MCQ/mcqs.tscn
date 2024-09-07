@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://7j7n0ku4wc6v"]
 
-[ext_resource type="Script" path="res://Scripts/mcqs.gd" id="1_qhnxa"]
+[ext_resource type="Script" path="res://Scenes/MCQ/mcqs.gd" id="1_qhnxa"]
 [ext_resource type="FontFile" uid="uid://q2ihkb7nc1kg" path="res://Assets/fonts/PixelOperator8.ttf" id="2_741uw"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
