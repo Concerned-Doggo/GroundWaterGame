@@ -84,5 +84,9 @@ func on_enemy_stomped():
 
 
 func die():
-	print("die hero")
+	Engine.time_scale = 0.5
+	$CollisionShape2D.queue_free()
+	await get_tree().create_timer(0.5).timeout
+	Engine.time_scale = 1.0
+	get_tree().reload_current_scene()
 	

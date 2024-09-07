@@ -267,6 +267,7 @@ texture = ExtResource("1_nkbnd")
 9:3/0 = 0
 9:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:3/0/physics_layer_0/angular_velocity = 0.0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:3/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 9:3/0/physics_layer_1/angular_velocity = 0.0
 0:4/0 = 0
@@ -303,6 +304,7 @@ texture = ExtResource("1_nkbnd")
 9:4/0 = 0
 9:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:4/0/physics_layer_0/angular_velocity = 0.0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 9:4/0/physics_layer_1/angular_velocity = 0.0
 0:5/0 = 0
@@ -648,8 +650,8 @@ texture = ExtResource("1_nkbnd")
 2:4/0/physics_layer_1/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_curdg"]
-physics_layer_0/collision_layer = 5
-physics_layer_0/collision_mask = 4
+physics_layer_0/collision_layer = 128
+physics_layer_0/collision_mask = 128
 physics_layer_1/collision_layer = 1
 physics_layer_1/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_6g1xi")
@@ -700,7 +702,7 @@ _data = {
 [node name="Level2-1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-1, -2)
+position = Vector2(0, -2)
 tile_set = SubResource("TileSet_curdg")
 format = 2
 layer_0/name = "Background"
@@ -717,7 +719,7 @@ position = Vector2(-1, 0)
 position = Vector2(2677, -549)
 
 [node name="Player" parent="Characters" instance=ExtResource("2_o3a8r")]
-position = Vector2(1629, -498)
+position = Vector2(2387, -538)
 
 [node name="Camera2D" type="Camera2D" parent="Characters/Player"]
 position = Vector2(6, -8)
@@ -771,3 +773,6 @@ position = Vector2(737, -395)
 
 [node name="Slimy" parent="Enemy" instance=ExtResource("7_vrwi6")]
 position = Vector2(280, -471)
+
+[node name="Slimy" parent="." instance=ExtResource("7_vrwi6")]
+position = Vector2(2312, -544)
