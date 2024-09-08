@@ -16,8 +16,10 @@ const JUMP_VELOCITY = -300.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animatedSprite = $AnimatedSprite2D
+@onready var actionable_finder = $ActionableFinder
 
 func _physics_process(delta):
+	
 	if climbing == false and not is_on_floor():
 		velocity.y += gravity * delta
 	elif climbing == true:
@@ -62,6 +64,13 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func _input(event):
+	if event.is_action_pressed("interact"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		
+		if(actionables.size() > 0):
+			actionables[1].action()
+			return
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is Enemy:
