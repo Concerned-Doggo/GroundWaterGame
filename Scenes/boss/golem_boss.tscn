@@ -3,22 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bdpvytjvv6v04" path="res://Assets/sprites/Boss/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="1_hnxua"]
 [ext_resource type="Texture2D" uid="uid://d4eoguuhif4io" path="res://Assets/sprites/Boss/Mecha-stone Golem 0.1/weapon PNG/Laser_sheet.png" id="2_eikgq"]
 
-[sub_resource type="Animation" id="Animation_bhmlh"]
-resource_name = "laser"
-length = 15.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Pivot/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 14]
-}
-
 [sub_resource type="Animation" id="Animation_xs78w"]
 length = 0.001
 tracks/0/type = "value"
@@ -38,6 +22,22 @@ tracks/0/keys = {
 resource_name = "idle"
 length = 4.0
 step = 8.0
+
+[sub_resource type="Animation" id="Animation_bhmlh"]
+resource_name = "laser"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 14]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k7j71"]
 _data = {
