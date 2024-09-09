@@ -1,0 +1,118 @@
+[gd_scene load_steps=14 format=3 uid="uid://k1i403ffi5w8"]
+
+[ext_resource type="Script" path="res://Scenes/character/Farmer/farmer.gd" id="1_tf7tl"]
+[ext_resource type="Texture2D" uid="uid://cyygqjyxgqm62" path="res://Assets/sprites/Characters/Lady/ladyOfTheLake_.png" id="2_sl8c0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnggg"]
+atlas = ExtResource("2_sl8c0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq84x"]
+atlas = ExtResource("2_sl8c0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y56q4"]
+atlas = ExtResource("2_sl8c0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5007"]
+atlas = ExtResource("2_sl8c0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6wta"]
+atlas = ExtResource("2_sl8c0")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bklnk"]
+atlas = ExtResource("2_sl8c0")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb6k5"]
+atlas = ExtResource("2_sl8c0")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77e24"]
+atlas = ExtResource("2_sl8c0")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ooeia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnggg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq84x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y56q4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5007")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6wta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bklnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb6k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77e24")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_khf4g"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgsfk"]
+size = Vector2(19, 9)
+
+[node name="Lady" type="CharacterBody2D"]
+collision_layer = 129
+collision_mask = 129
+script = ExtResource("1_tf7tl")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ooeia")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.457758
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_khf4g")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 129
+collision_mask = 385
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8.5, 4.5)
+shape = SubResource("RectangleShape2D_tgsfk")
+
+[node name="RayCast" type="Node2D" parent="."]
+
+[node name="LeftRayCast" type="RayCast2D" parent="RayCast"]
+position = Vector2(2, 7)
+target_position = Vector2(-16, 0)
+collision_mask = 132
+
+[node name="RightRayCast" type="RayCast2D" parent="RayCast"]
+position = Vector2(-2, 7)
+target_position = Vector2(15, 0)
+collision_mask = 128
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

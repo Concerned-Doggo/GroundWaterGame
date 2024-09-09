@@ -10,16 +10,15 @@ func _ready():
 func _process(delta):
 	pass
 
+@onready var label = $Label
+
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		# var infoLabel = Label.new()
-		$Label.add_theme_font_override("font", load("res://Assets/fonts/PixelOperator8.ttf")) 
-		$Label.add_theme_font_size_override("font_size", 8) 
+		label.add_theme_font_override("font", load("res://Assets/fonts/PixelOperator8.ttf")) 
+		label.add_theme_font_size_override("font_size", 8) 
 		#$Label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_WORD
-		$Label.text = "Groundwater provides 
-		about 30% 
-		of the world’s freshwater!"
 
 
 # func _on_body_exited(body:Node2D):

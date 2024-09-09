@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://3acisyt1rkgi"]
+
+[ext_resource type="Texture2D" uid="uid://deps02c2sq0t0" path="res://Assets/sprites/Images/factory.png" id="1_trvjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu5pj"]
+size = Vector2(115, 36.5)
+
+[node name="Factory" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(21.5, -10.5)
+scale = Vector2(0.244141, 0.166016)
+texture = ExtResource("1_trvjx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21.5, 12.25)
+shape = SubResource("RectangleShape2D_lu5pj")

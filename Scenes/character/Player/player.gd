@@ -67,9 +67,8 @@ func _physics_process(delta):
 func _input(event):
 	if event.is_action_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
-		
 		if(actionables.size() > 0):
-			actionables[1].action()
+			actionables[1].action(str(actionables[1]))
 			return
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -98,4 +97,3 @@ func die():
 	await get_tree().create_timer(0.5).timeout
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
-	

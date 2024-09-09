@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://16edo8m2v682"]
+[gd_scene load_steps=18 format=3 uid="uid://16edo8m2v682"]
 
 [ext_resource type="Texture2D" uid="uid://yn1fno51yw3n" path="res://Assets/sprites/world_tileset.png" id="1_sgo6i"]
 [ext_resource type="PackedScene" uid="uid://cvk8s4q1qb2qe" path="res://Scenes/character/Farmer/farmer.tscn" id="2_k0oov"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bw5rk1yk6m36d" path="res://Scenes/Killzone/kill_zone.tscn" id="6_5ox3k"]
 [ext_resource type="PackedScene" uid="uid://fjf1a7q6qf7n" path="res://Scenes/Platforms/desert/desert_platform.tscn" id="7_kut7n"]
 [ext_resource type="PackedScene" uid="uid://cm7sbfn44lvix" path="res://Scenes/Enemy/slimy/slimy.tscn" id="8_ykalw"]
+[ext_resource type="PackedScene" uid="uid://dnw7mykanwos7" path="res://Scenes/InfoTab/info_tab.tscn" id="9_7paki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6g1xi"]
 texture = ExtResource("1_sgo6i")
@@ -728,7 +729,7 @@ position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_3n41t")
 
 [node name="Player" parent="Characters" instance=ExtResource("4_uthlh")]
-position = Vector2(181, -433)
+position = Vector2(2422, -560)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Characters/Player"]
@@ -751,9 +752,9 @@ shape = SubResource("WorldBoundaryShape2D_ardij")
 [node name="Lables" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="Lables"]
-offset_left = 122.0
+offset_left = 114.0
 offset_top = -503.0
-offset_right = 210.0
+offset_right = 202.0
 offset_bottom = -480.0
 theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
 theme_override_fonts/font = ExtResource("5_6agdi")
@@ -791,3 +792,11 @@ position = Vector2(1921, -405)
 
 [node name="Slimy4" parent="Enemy" instance=ExtResource("8_ykalw")]
 position = Vector2(729, -421)
+
+[node name="InfoTab" parent="." instance=ExtResource("9_7paki")]
+position = Vector2(85, -445)
+
+[node name="Label" type="Label" parent="InfoTab"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "this is second text label"

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg8bdhgkt80j4"]
+
+[ext_resource type="Texture2D" uid="uid://c7rcr43f61aed" path="res://Assets/sprites/Images/hut.png" id="1_guhem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpvjv"]
+size = Vector2(38, 18)
+
+[node name="Hut" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.14441e-05, 0.499987)
+scale = Vector2(0.09375, 0.0683593)
+texture = ExtResource("1_guhem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_kpvjv")
