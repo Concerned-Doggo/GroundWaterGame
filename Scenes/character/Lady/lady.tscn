@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://k1i403ffi5w8"]
 
-[ext_resource type="Script" path="res://Scenes/character/Farmer/farmer.gd" id="1_tf7tl"]
+[ext_resource type="Script" path="res://Scenes/character/Lady/lady.gd" id="1_j0hhg"]
 [ext_resource type="Texture2D" uid="uid://cyygqjyxgqm62" path="res://Assets/sprites/Characters/Lady/ladyOfTheLake_.png" id="2_sl8c0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xnggg"]
@@ -81,14 +81,13 @@ size = Vector2(19, 9)
 [node name="Lady" type="CharacterBody2D"]
 collision_layer = 129
 collision_mask = 129
-script = ExtResource("1_tf7tl")
+script = ExtResource("1_j0hhg")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["NPC"]]
 sprite_frames = SubResource("SpriteFrames_ooeia")
 animation = &"walk"
-autoplay = "walk"
-frame_progress = 0.457758
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)

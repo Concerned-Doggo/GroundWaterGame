@@ -68,7 +68,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_se1f8")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"walk",
 "speed": 10.0
 }]
 
@@ -88,9 +88,8 @@ metadata/_edit_group_ = true
 sprite_frames = SubResource("SpriteFrames_6tcdb")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.469071
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["NPC"]]
 position = Vector2(0, 6)
 shape = SubResource("CircleShape2D_khf4g")
 

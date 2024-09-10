@@ -6,6 +6,8 @@
 size = Vector2(38, 18)
 
 [node name="Hut" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.14441e-05, 0.499987)

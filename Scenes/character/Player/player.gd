@@ -67,7 +67,7 @@ func _physics_process(delta):
 func _input(event):
 	if event.is_action_pressed("interact"):
 		var actionables = actionable_finder.get_overlapping_areas()
-		if(actionables.size() > 0):
+		if(actionables.size() >= 1):
 			actionables[1].action(str(actionables[1]))
 			return
 
