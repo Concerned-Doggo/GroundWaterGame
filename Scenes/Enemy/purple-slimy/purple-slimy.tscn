@@ -59,7 +59,7 @@ position = Vector2(56, 48)
 collision_mask = 2
 script = ExtResource("1_5gnwn")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_c4igi")
 autoplay = "default"

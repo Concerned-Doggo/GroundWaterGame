@@ -76,11 +76,15 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		handle_enemy_collision(area)
 
 func handle_enemy_collision(enemy: Enemy):
+	print("1")
 	if enemy == null:
 		return
-	
+	print("2")
+	print("posistion: ")
+	print(position)
+	print(enemy.position)
 	var angle_of_collision = rad_to_deg(position.angle_to_point(enemy.position))
-	
+	print(angle_of_collision)
 	if angle_of_collision > min_stomp_deg && max_stomp_deg > angle_of_collision:
 		enemy.die()
 		on_enemy_stomped()
@@ -93,7 +97,8 @@ func on_enemy_stomped():
 
 func die():
 	Engine.time_scale = 0.5
-	$CollisionShape2D.queue_free()
+	if $CollisionShape2D:
+		$CollisionShape2D.queue_free()
 	await get_tree().create_timer(0.5).timeout
 	Engine.time_scale = 1.0
 	get_tree().reload_current_scene()
