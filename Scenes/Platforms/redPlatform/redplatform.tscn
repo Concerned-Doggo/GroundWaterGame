@@ -6,6 +6,8 @@
 size = Vector2(30, 8)
 
 [node name="red-platform" type="StaticBody2D"]
+disable_mode = 1
+collision_layer = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_x8w0v")
