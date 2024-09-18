@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/MCQ/info_tab.gd" id="1_do3fy"]
 [ext_resource type="Texture2D" uid="uid://ceahrbgx530je" path="res://Assets/sprites/Images/information.png" id="1_gs8yv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0k2v"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pk82r"]
+radius = 45.0111
 
 [node name="InfoTab" type="Area2D"]
 light_mask = 3
@@ -20,7 +21,7 @@ texture = ExtResource("1_gs8yv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 3
 visibility_layer = 3
-shape = SubResource("RectangleShape2D_f0k2v")
+shape = SubResource("CircleShape2D_pk82r")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
