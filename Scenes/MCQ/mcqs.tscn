@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/MCQ/mcqs.gd" id="1_qhnxa"]
 [ext_resource type="FontFile" uid="uid://q2ihkb7nc1kg" path="res://Assets/fonts/PixelOperator8.ttf" id="2_741uw"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="MCQs" type="CanvasLayer"]
 script = ExtResource("1_qhnxa")
 
 [node name="Label" type="Label" parent="."]

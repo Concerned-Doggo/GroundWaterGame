@@ -11,38 +11,40 @@ var current_dialog = 0
 
 var dialog_texts = [
 	{
-		"question": "What is the main source of groundwater?",
-		"options": ["Rainfall", "Rivers", "Lakes"],
+		"question": "Which of the following is a major advantage of micro-irrigation systems (like drip irrigation) during drought conditions?",
+		"options": ["It reduces water usage by up to 50%", "It eliminates the need for groundwater extraction", "It increases crop yield by using untreated wastewater"],
 		"answer": 0
 	},
 	{
-		"question": "How can we recharge groundwater?",
-		"options": ["Artificial recharge", "Deforestation", "Urbanization"],
-		"answer": 0
+		"question": "How does crop diversification help in managing water resources during drought conditions?",
+		"options": ["It increases groundwater recharge by modifying soil structure", "It reduces the overall demand for irrigation by switching to drought-resistant crops", "It decreases the need for fertilizers, which reduces water contamination"],
+		"answer": 1
 	},
 	{
-		"question": "What crop type requires less water?",
-		"options": ["Wheat", "Rice", "Millets"],
+		"question": "Which of the following irrigation methods is least efficient for water conservation in drought-prone areas?",
+		"options": ["Sprinkler irrigation", "Drip irrigation", "Surface irrigation"],
 		"answer": 2
 	},
 	{
-		"question": "Which practice helps in conserving groundwater?",
-		"options": ["Over-irrigation", "Mulching", "Water Logging"],
-		"answer": 1
+		"question": "Which of the following measures is the most effective for sustaining groundwater levels during prolonged droughts?",
+		"options": ["Switching to high-water-use crops", "Increasing groundwater extraction during droughts", "Implementing rainwater harvesting and artificial recharge systems"],
+		"answer": 2
 	}
 ]
 
 var plank_texts = [
-	"Groundwater levels have been decreasing due to excessive use of tubewells.",
-	"Microirrigation systems help in saving a significant amount of water.",
-	"Rainwater harvesting is an effective way to recharge groundwater.",
-	"Contamination of groundwater can lead to serious health issues."
+	"It reduces water usage by up to 50% (Micro-irrigation delivers water directly to the roots, minimizing evaporation and runoff, which is critical during drought.)",
+	"It reduces the overall demand for irrigation by switching to drought-resistant crops (Diversifying crops to include drought-resistant varieties can reduce water needs.)",
+	"Surface irrigation (Surface irrigation often leads to significant water loss through evaporation and runoff, making it less efficient in conserving water.)",
+	"Implementing rainwater harvesting and artificial recharge systems (These systems help capture available water during the rainy season and store it underground for use during droughts.)"
 ]
+
 
 func _ready() -> void:
 	type(dialog_texts[current_dialog]["question"], true)
 
 func type(text: String, is_question: bool) -> void:
+	
 	options_container.hide()  # Hide options at the start
 	label.visible_ratio = 0
 	label.text = text

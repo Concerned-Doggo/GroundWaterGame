@@ -7,9 +7,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_oa011"]
 radius = 40.0
 
-[node name="Area2D" type="Area2D"]
+[node name="displayMCQ" type="Area2D"]
 position = Vector2(0, -3.8147e-06)
 scale = Vector2(0.2, 0.2)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_1itvt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,6 +21,7 @@ texture = ExtResource("1_gk1cm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_oa011")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("3_744k3")]
+[node name="MCQs" parent="." instance=ExtResource("3_744k3")]
+follow_viewport_enabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

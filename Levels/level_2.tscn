@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://16edo8m2v682"]
+[gd_scene load_steps=23 format=3 uid="uid://16edo8m2v682"]
 
 [ext_resource type="Script" path="res://Levels/GameManager.gd" id="1_oiitj"]
 [ext_resource type="Texture2D" uid="uid://yn1fno51yw3n" path="res://Assets/sprites/world_tileset.png" id="1_sgo6i"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://tnurhr8e6fxq" path="res://Scenes/utils/next-level/next_level.tscn" id="11_ht3d0"]
 [ext_resource type="PackedScene" uid="uid://d1anw2ops1msp" path="res://Scenes/Coin/coin.tscn" id="12_eryfm"]
 [ext_resource type="PackedScene" uid="uid://7j7n0ku4wc6v" path="res://Scenes/MCQ/mcqs.tscn" id="13_06t0n"]
+[ext_resource type="PackedScene" uid="uid://bb0dm2eotnyvx" path="res://Scenes/MCQ/displayMCQ.tscn" id="14_ufeeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6g1xi"]
 texture = ExtResource("1_sgo6i")
@@ -946,4 +947,7 @@ position = Vector2(1946, -514)
 [node name="Coin35" parent="Coins" instance=ExtResource("12_eryfm")]
 position = Vector2(1970, -511)
 
-[node name="CanvasLayer" parent="." instance=ExtResource("13_06t0n")]
+[node name="MCQs2" parent="." instance=ExtResource("13_06t0n")]
+
+[node name="displayMCQ" parent="." instance=ExtResource("14_ufeeu")]
+position = Vector2(326, -461)
