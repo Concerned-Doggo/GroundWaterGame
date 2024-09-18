@@ -35,4 +35,6 @@ func die():
 	horizontal_speed = 0
 	vertical_speed = 0
 	animated_sprite_2d.play("death")
+	$CollisionShape2D.queue_free()
+	await get_tree().create_timer(0.5).timeout
 	queue_free()

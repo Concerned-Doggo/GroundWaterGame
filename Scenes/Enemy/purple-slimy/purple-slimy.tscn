@@ -1,11 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://22th6jspoh5b"]
+[gd_scene load_steps=13 format=3 uid="uid://22th6jspoh5b"]
 
-[ext_resource type="Script" path="res://Scenes/Enemy/slimy/slimy.gd" id="1_5gnwn"]
+[ext_resource type="Script" path="res://Scenes/Enemy/purple-slimy/purple-slimy.gd" id="1_gxww0"]
 [ext_resource type="Texture2D" uid="uid://c1b3myi8q3gvg" path="res://Assets/sprites/slime_purple.png" id="1_uk4cw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_22wbg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l22f"]
+atlas = ExtResource("1_uk4cw")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cynbm"]
 atlas = ExtResource("1_uk4cw")
 region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdxqs"]
+atlas = ExtResource("1_uk4cw")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0k2p"]
+atlas = ExtResource("1_uk4cw")
+region = Rect2(72, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmivw"]
 atlas = ExtResource("1_uk4cw")
@@ -27,7 +39,16 @@ region = Rect2(72, 24, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_22wbg")
+"texture": SubResource("AtlasTexture_7l22f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cynbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdxqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0k2p")
 }],
 "loop": true,
 "name": &"death",
@@ -57,19 +78,20 @@ size = Vector2(20, 19)
 [node name="purple-slimy" type="Area2D"]
 position = Vector2(56, 48)
 collision_mask = 2
-script = ExtResource("1_5gnwn")
+script = ExtResource("1_gxww0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_c4igi")
 autoplay = "default"
+frame_progress = 0.682902
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_ivp1g")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 9)
+target_position = Vector2(0, 10)
 collision_mask = 19
 
 [node name="LeftRayCast" type="RayCast2D" parent="."]

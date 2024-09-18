@@ -1,11 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://cm7sbfn44lvix"]
+[gd_scene load_steps=13 format=3 uid="uid://cm7sbfn44lvix"]
 
 [ext_resource type="Texture2D" uid="uid://dcvg5t705gxtg" path="res://Assets/sprites/slime_green.png" id="1_3q4ih"]
 [ext_resource type="Script" path="res://Scenes/Enemy/slimy/slimy.gd" id="1_ndtgp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2vg4k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3mgj"]
 atlas = ExtResource("1_3q4ih")
-region = Rect2(0, 0, 24, 24)
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vnn8"]
+atlas = ExtResource("1_3q4ih")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01hwq"]
+atlas = ExtResource("1_3q4ih")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7e62"]
+atlas = ExtResource("1_3q4ih")
+region = Rect2(72, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ji6a7"]
 atlas = ExtResource("1_3q4ih")
@@ -27,7 +39,16 @@ region = Rect2(72, 24, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2vg4k")
+"texture": SubResource("AtlasTexture_e3mgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vnn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01hwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7e62")
 }],
 "loop": true,
 "name": &"death",
@@ -62,7 +83,7 @@ script = ExtResource("1_ndtgp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy"]]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_qi6bc")
-animation = &"walk"
+animation = &"death"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -51,17 +51,20 @@ func type(text: String, is_question: bool) -> void:
 	tween.tween_property(label, "visible_ratio", 1, 1)
 	if is_question:
 		tween.tween_callback(Callable(self, "show_options"))
-		
+
 func show_options() -> void:
+	label.text = ""
 	options_container.show()  # Make sure the options are shown
 	option1_button.text = dialog_texts[current_dialog]["options"][0]
 	option2_button.text = dialog_texts[current_dialog]["options"][1]
 	option3_button.text = dialog_texts[current_dialog]["options"][2]
 
 func check_answer(selected_option: int) -> void:
+	
 	if selected_option == dialog_texts[current_dialog]["answer"]:
 		type("Correct! " + dialog_texts[current_dialog]["options"][selected_option] + " is the right answer.", false)
 	else:
+		label.text = ""
 		type("Incorrect! The correct answer is " + dialog_texts[current_dialog]["options"][dialog_texts[current_dialog]["answer"]], false)
 	
 	options_container.hide()
@@ -74,11 +77,12 @@ func check_answer(selected_option: int) -> void:
 		await get_tree().create_timer(2).timeout
 		type("You've completed the quiz!", false)
 		await get_tree().create_timer(2).timeout
-		show_plank_info()
+		queue_free()
 
 # Plank Card Interaction Function
 func show_plank_info() -> void:
 	# Display a random plank text after the quiz is completed
+	
 	var plank_index = randi() % plank_texts.size()
 	plank_label.visible = true
 	plank_label.text = plank_texts[plank_index]

@@ -78,7 +78,7 @@ radius = 4.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgsfk"]
 size = Vector2(19, 9)
 
-[node name="Lady" type="CharacterBody2D"]
+[node name="Lady" type="CharacterBody2D" groups=["NPC"]]
 collision_layer = 129
 collision_mask = 129
 script = ExtResource("1_j0hhg")

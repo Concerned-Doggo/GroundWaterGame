@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb0dm2eotnyvx"]
+
+[ext_resource type="Script" path="res://Scenes/MCQ/displayMCQ.gd" id="1_1itvt"]
+[ext_resource type="Texture2D" uid="uid://m3qcxllidlo7" path="res://Assets/sprites/Images/info.png" id="1_gk1cm"]
+[ext_resource type="PackedScene" uid="uid://7j7n0ku4wc6v" path="res://Scenes/MCQ/mcqs.tscn" id="3_744k3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oa011"]
+radius = 40.0
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(0, -3.8147e-06)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_1itvt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_gk1cm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oa011")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_744k3")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

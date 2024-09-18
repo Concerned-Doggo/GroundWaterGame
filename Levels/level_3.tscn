@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bv8bxcpsugq6f"]
+[gd_scene load_steps=21 format=3 uid="uid://bv8bxcpsugq6f"]
 
 [ext_resource type="Texture2D" uid="uid://yn1fno51yw3n" path="res://Assets/sprites/world_tileset.png" id="1_431ih"]
 [ext_resource type="PackedScene" uid="uid://jaoj13ar0kyq" path="res://Scenes/character/Player/player.tscn" id="2_08gw8"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dg8bdhgkt80j4" path="res://Scenes/utils/Hut/hut.tscn" id="8_lc4kh"]
 [ext_resource type="PackedScene" uid="uid://k1i403ffi5w8" path="res://Scenes/character/Lady/lady.tscn" id="9_wvw0b"]
 [ext_resource type="PackedScene" uid="uid://dy2majyq4ks14" path="res://Scenes/utils/Pipe/pipe.tscn" id="11_0msxv"]
-[ext_resource type="PackedScene" uid="uid://cm7sbfn44lvix" path="res://Scenes/Enemy/slimy/slimy.tscn" id="12_edidj"]
 [ext_resource type="PackedScene" uid="uid://xitgtlw0caeg" path="res://Scenes/Platforms/redPlatform/redplatform.tscn" id="13_pjppv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqk44"]
@@ -760,7 +759,7 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="Lady" parent="characters" instance=ExtResource("9_wvw0b")]
-position = Vector2(-183, 16)
+position = Vector2(-216, 12)
 
 [node name="Actionable" parent="characters/Lady" instance=ExtResource("3_24oem")]
 
@@ -777,6 +776,7 @@ offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("3_yitkp")
 theme_override_font_sizes/font_size = 16
 text = "Level 3"
+metadata/_edit_use_anchors_ = true
 
 [node name="KillZone" parent="." instance=ExtResource("5_58uy8")]
 position = Vector2(1107, -271)
@@ -798,21 +798,6 @@ position = Vector2(716, 36)
 [node name="Factory" parent="Utils" instance=ExtResource("6_uifi5")]
 z_index = -1
 position = Vector2(-1081, 21)
-
-[node name="Enemy" type="Node2D" parent="."]
-position = Vector2(1568, -903)
-
-[node name="Slimy" parent="Enemy" instance=ExtResource("12_edidj")]
-position = Vector2(-556, 15)
-
-[node name="purple-slimy2" parent="Enemy" instance=ExtResource("4_lx6wn")]
-position = Vector2(437, 70)
-
-[node name="purple-slimy" parent="Enemy" instance=ExtResource("4_lx6wn")]
-position = Vector2(-377, -10)
-
-[node name="PurpleSlimy" parent="Enemy" instance=ExtResource("4_lx6wn")]
-position = Vector2(-590, -377)
 
 [node name="Platforms" type="Node2D" parent="."]
 position = Vector2(1568, -903)
@@ -837,3 +822,6 @@ autoplay = "move"
 
 [node name="red-platform" parent="Platforms" instance=ExtResource("13_pjppv")]
 position = Vector2(382, 51)
+
+[node name="purple-slimy" parent="." instance=ExtResource("4_lx6wn")]
+position = Vector2(2052, -858)
